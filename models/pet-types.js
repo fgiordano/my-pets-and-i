@@ -3,5 +3,6 @@ module.exports = [
   "Feline",
   "Reptile",
   "Bird",
+  "Rodent",
   "Other"
 ];

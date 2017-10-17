@@ -9,7 +9,7 @@ const PetSchema = new Schema({
   name       : { type: String, required: true },
   type       : { type: String, enum: PETTYPE, required: true },
   breed      : { type: String, required: true },
-  about me   : { type: String, required: true },
+  about-me   : { type: String, required: true },
   weight     : { type: Number, required: true },
   age        : { type: Number, required: true },
   // imgUrl     : { type: String, default: "https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" }

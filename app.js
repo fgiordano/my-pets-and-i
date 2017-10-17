@@ -14,6 +14,8 @@ const LocalStrategy      = require('passport-local').Strategy;
 const User               = require('./models/user');
 const bcrypt             = require('bcrypt');
 
+const petsRoutes         = require('./routes/pets.js');
+
 // var express = require('express');
 // var path = require('path');
 // var favicon = require('serve-favicon');
@@ -129,6 +131,7 @@ app.use(passport.session());
 const index = require('./routes/index');
 app.use('/', index);
 app.use('/', authRoutes);
+app.use('/', petsRoutes)
 
 
 // catch 404 and forward to error handler
