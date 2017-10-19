@@ -13,7 +13,6 @@ const authRoutes         = require('./routes/authentication.js');
 const LocalStrategy      = require('passport-local').Strategy;
 const User               = require('./models/user');
 const bcrypt             = require('bcrypt');
-
 const petsRoutes         = require('./routes/pets.js');
 
 // var express = require('express');
@@ -42,6 +41,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'petcarerdev',
+  resave: false,
+  saveUninitialized: true,
+  store: new MongoStore( { mongooseConnection: mongoose.connection })
+}));
 
 app.use( (req, res, next) => {
   if (typeof(req.user) !== "undefined"){
@@ -52,12 +57,7 @@ app.use( (req, res, next) => {
   next();
 });
 
-app.use(session({
-  secret: 'petcarerdev',
-  resave: false,
-  saveUninitialized: true,
-  store: new MongoStore( { mongooseConnection: mongoose.connection })
-}));
+
 
 
 passport.serializeUser((user, cb) => {

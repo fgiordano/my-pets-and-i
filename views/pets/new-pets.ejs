@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 centered-form">
+      <form action="/pets" method="post">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="text" name="age" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="breed">Breed</label>
+          <input type="text" name="breed" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="weight">Weight</label>
+          <input type="text" name="weight" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="aboutme">About this pet</label>
+          <textarea id="aboutme" name="aboutme" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="type">Type</label><br>
+          <select name="type" id="type">
+            <% types.forEach((type) => { %>
+              <option type="text" value="<%= type %>" class="form-control"><%= type %></option>
+            <%  }) %>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit">Add Pet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
