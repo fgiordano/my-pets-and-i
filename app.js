@@ -123,15 +123,13 @@ passport.use('local-login', new LocalStrategy((username, password, next) => {
   });
 }));
 
-
-
 app.use(passport.initialize());
 app.use(passport.session());
 
 const index = require('./routes/index');
 app.use('/', index);
 app.use('/', authRoutes);
-app.use('/', petsRoutes)
+app.use('/pets', petsRoutes)
 
 
 // catch 404 and forward to error handler

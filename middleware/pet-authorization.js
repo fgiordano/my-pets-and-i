@@ -28,3 +28,5 @@ function checkOwnership(req, res, next){
     return next()
   });
 }
+
+module.exports = {authorizePet, checkOwnership}

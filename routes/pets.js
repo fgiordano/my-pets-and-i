@@ -55,7 +55,7 @@ router.post('/:id', ensureLoggedIn('/login'), authorizePet, (req, res, next) => 
     owner: req.user._id
   };
 
-  Pet.findByIdAndUpdate(req.params.id, updates, (err, campaign) => {
+  Pet.findByIdAndUpdate(req.params.id, updates, (err, Pet) => {
     if (err) {
       return res.render('pets/edit-pets', {
         Pet,
