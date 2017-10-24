@@ -1,0 +1,68 @@
+<div class="container">
+      <div class="row">
+        <div class="col-sm-6 centered-form">
+          <form action="/pets/<%//= Pet._id %>" method="post">
+
+            <% if (typeof(errors) !== 'undefined'){ %>
+              <div class="alert alert-danger">
+              <ul>
+                <% for (let error in errors){ %>
+                  <li><%= errors[error].message %></li>
+                <% } %>
+              </ul>
+              </div>
+            <% } %>
+
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" name="age" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="breed">Breed</label>
+              <input type="text" name="breed" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="weight">Weight</label>
+              <input type="text" name="weight" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="aboutme">About this pet</label>
+              <textarea
+                id="aboutme"
+                name="aboutme"
+                class="form-control">
+                <%=// pet.aboutme %>
+              </textarea>
+            </div>
+            <div class="form-group">
+              <label for="type">Type</label><br>
+              <select name="type" id="type">
+                <% //types.forEach((role) => { %>
+                <!-- This selects the campaign's category in the dropdown -->
+                  <% //if (type === pet.type) { %>
+                    <option
+                      selected
+                      type="text"
+                      value="<%//= type %>"
+                      class="form-control">
+                    <%//= category %>
+                    </option>
+                  <%// } else { %>
+                    <option type="text" value="<%//= type %>" class="form-control"><%//= type %></option>
+                  <%// } %>
+                <%//  }) %>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <button type="submit">Edit your pet</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>

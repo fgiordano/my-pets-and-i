@@ -48,7 +48,9 @@
                  <button class="btn btn-link btn-logout" type="submit">Logout</a>
                  </form>
                  </li>
-                 <li><a href="#">Profile</a></li>
+                 <%if(typeof(User) != 'undefined'){%>
+                 <li><a href="/users/<%= User._id %>/show-petcarer">Profile</a></li>
+                <%}%>
                </ul>
              </div>
            </div>

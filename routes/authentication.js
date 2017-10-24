@@ -13,6 +13,20 @@ router.post('/login', ensureLoggedOut(), passport.authenticate('local-login', {
   failureRedirect : '/login'
 }));
 
+// 
+// app.post('/login', function(req, res, next) {
+//   passport.authenticate('local', function(err, user, info) {
+//     if (err) { return next(err); }
+//     // Redirect if it fails
+//     if (!user) { return res.redirect('/login'); }
+//     req.logIn(user, function(err) {
+//       if (err) { return next(err); }
+//       // Redirect if it succeeds
+//       return res.redirect('/users/' + user.username);
+//     });
+//   })(req, res, next);
+// });
+
 router.get('/signup', ensureLoggedOut(), (req, res) => {
     res.render('authentication/signup');
 });

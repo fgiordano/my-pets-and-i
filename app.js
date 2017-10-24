@@ -14,6 +14,7 @@ const LocalStrategy      = require('passport-local').Strategy;
 const User               = require('./models/user');
 const bcrypt             = require('bcrypt');
 const petsRoutes         = require('./routes/pets.js');
+const usersRoutes        = require('./routes/users.js')
 
 // var express = require('express');
 // var path = require('path');
@@ -130,6 +131,7 @@ const index = require('./routes/index');
 app.use('/', index);
 app.use('/', authRoutes);
 app.use('/pets', petsRoutes)
+app.use('/users', usersRoutes)
 
 
 // catch 404 and forward to error handler
