@@ -4,6 +4,8 @@ const RESIDENCY = require('./residency-types');
 const ROLES     = require('./roles-types');
 const PARKING   = require('./parking-types');
 
+const Pet       = mongoose.model.Pet;
+
 const userSchema = new Schema({
   email      : { type: String, required: true },
   username   : { type: String, required: true },
@@ -13,6 +15,7 @@ const userSchema = new Schema({
   parking    : { type: String, enum: PARKING},
   residence  : { type: String, enum: RESIDENCY},
   role       : { type: String, enum: ROLES, required: true },
+  pet        : { type: Schema.Types.ObjectId, ref: 'Pet', required: true },
   imgUrl     : { type: String, default: "https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" }
 });
 

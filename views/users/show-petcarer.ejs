@@ -4,7 +4,7 @@
 <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
 	<div class="row panel">
 		<div class="col-md-4 bg_blur ">
-    	    <a href="#" class="follow_btn hidden-xs">Follow</a>
+    	    <a href="#" class="follow_btn hidden-xs">Contact Me</a>
 		</div>
         <div class="col-md-8  col-xs-12">
            <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img-thumbnail picture hidden-xs" />
@@ -13,6 +13,7 @@
                 <h1><%= User.username %></h1>
               <h4><%= User.role %></h4>
                 <p class="campaign-description"><%= User.aboutme %></p>
+								<h1>Meet My Pets!</h1>
            </div>
         </div>
     </div>
@@ -26,3 +27,29 @@
         </div>
     </div>
 </div>
+
+<div class="container pet-container">
+
+  <div class="row">
+    <div class="col-sm-2">
+      <img src="https://ksr-ugc.imgix.net/assets/007/188/910/68df9ec3603e3f3138bed402dea3cab2_original.jpg?w=80&h=80&fit=crop&v=1466566705&auto=format&q=92&s=eff05acf65569368cc99f6363722fe60"><br>
+      <!-- By: <strong><%//= Pet.owner.username %></strong> -->
+    </div>
+    <div class="col-sm-10">
+      <h1><%= User.Pet.name %></h1>
+      <!-- <h2 class="campaign-category"><%//= Pet.type %></h2>
+      <p class="campaign-description"><%//= Pet.aboutme %></p> -->
+    </div>
+  </div>
+
+</div>
+
+<!-- <h2>Reviews</h2>
+<ul>
+  <% product.reviews.forEach((review) => { %>
+    <li>
+      <p><%//= review.content %></p>
+      <strong><%//= review.author %></strong>
+    </li>
+  <%  }); %>
+</ul> -->

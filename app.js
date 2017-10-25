@@ -14,7 +14,10 @@ const LocalStrategy      = require('passport-local').Strategy;
 const User               = require('./models/user');
 const bcrypt             = require('bcrypt');
 const petsRoutes         = require('./routes/pets.js');
-const usersRoutes        = require('./routes/users.js')
+const usersRoutes        = require('./routes/users.js');
+
+
+require('dotenv').config();
 
 // var express = require('express');
 // var path = require('path');
@@ -24,7 +27,7 @@ const usersRoutes        = require('./routes/users.js')
 // var bodyParser = require('body-parser');
 
 
-mongoose.connect('mongodb://localhost:27017/petcarers-development');
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 // view engine setup
