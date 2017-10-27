@@ -28,19 +28,14 @@
 
              <div class="collapse navbar-collapse" id="home-nav">
                <ul class="nav navbar-nav">
-                 <li><a href="/pets/new-pets">Add a pet</a></li>
+
                  <li class="nav-logo">
                    <a href="/" class="nav-logo-link">
-                     <img class="nav-logo-image" src="https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_8c904a3bee158b96cdaf0cad6900b4b2.png" alt="Kickstarter Logo">
+                     <h1>PetCarers</h1>
                    </a>
                  </li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
-                 <li>
-                   <a href="#">
-                     <span class="glyphicon glyphicon-search"></span>
-                   </a>
-                 </li>
                  <li><a href="/login">Login</a></li>
                  <li><a href="/signup">Signup</a></li>
                  <li>
@@ -50,7 +45,16 @@
                  </li>
                  <%if(typeof(User) != 'undefined'){%>
                  <li><a href="/users/<%= User._id %>/show-petcarer">Profile</a></li>
-                <%}%>
+                 <%}%>
+
+                 <%if(typeof(User) != 'undefined'){%>
+                 <li><a href="/users/<%= User._id %>/edit-user">Edit Your Profile</a></li>
+                 <%}%>
+
+                 <%if(typeof(User) != 'undefined'){%>
+                 <li><a href="/pets/new-pets">Add a Pet</a></li>
+                 <%}%>
+
                </ul>
              </div>
            </div>

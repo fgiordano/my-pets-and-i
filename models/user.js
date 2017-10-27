@@ -15,7 +15,7 @@ const userSchema = new Schema({
   parking    : { type: String, enum: PARKING},
   residence  : { type: String, enum: RESIDENCY},
   role       : { type: String, enum: ROLES, required: true },
-  pet        : { type: Schema.Types.ObjectId, ref: 'Pet', required: true },
+  pet        : { type: Schema.Types.ObjectId, ref: 'Pet'},
   imgUrl     : { type: String, default: "https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" }
 });
 
