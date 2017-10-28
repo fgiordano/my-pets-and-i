@@ -31,7 +31,7 @@ router.post('/', ensureLoggedIn('/login'), (req, res, next) => {
     if (err) {
       res.render('pets/new-pets', { Pet: newPet, types: TYPES });
     } else {
-      res.redirect(`/pets/${newPet._id}`);
+      res.redirect(`/users/${req.user._id}/show-petcarer`);
     }
   });
 });
@@ -66,6 +66,16 @@ router.post('/:id/edit-pets', ensureLoggedIn('/login'), authorizePet, (req, res,
     }
     return res.redirect(`/users/${req.user._id}/show-petcarer`);
   });
+});
+
+router.post('/:id/delete', (req, res, next) => {
+  const id = req.params.id;
+
+  Pet.findByIdAndRemove(id, (err, Pet) => {
+    if (err){ return next(err); }
+    return res.redirect(`/users/${req.user._id}/show-petcarer`);
+  });
+
 });
 
 router.get('/:id', checkOwnership, (req, res, next) => {

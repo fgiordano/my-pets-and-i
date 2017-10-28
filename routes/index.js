@@ -3,8 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-      let User = (typeof(req.user)=='undefined')?"":req.user;
-      return res.render('index', {User});
+      return res.render('index');
 });
 
 module.exports = router;

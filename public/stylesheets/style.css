@@ -7,8 +7,25 @@ a {
   color: #00B7FF;
 }
 
+button {
+  color: black;
+  font-size :14px;
+}
+
+.petcarers-logo {
+  font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.pet-description {
+  font-family: 'Open Sans', sans-serif;
+  color: #808080;
+  font-size: 14px;
+}
+
 .main-container {
-  padding-top: 25px;
+  padding-top: 0px;
 }
 
 nav.navbar {
@@ -50,14 +67,14 @@ nav.navbar {
 }
 
 .home-heading-wrapper {
-  padding: 0 5%;
+  padding: 100 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .home-heading-wrapper > h1 {
-  font-size: 9rem;
+  font-size: 7rem;
 }
 
 .home-heading-wrapper > p {
@@ -71,6 +88,7 @@ nav.navbar {
 }
 
 /* begin show-petcarer*/
+
 
 *{
     font-family: 'Open Sans', sans-serif;
@@ -103,7 +121,7 @@ body {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 font-size: 14px;
 line-height: 1.42857143;
-color: #fff;
+color: black;
 background-color: #F1F1F1;
 }
 
@@ -151,15 +169,15 @@ background-color: #F1F1F1;
 .header{
     color : #808080;
     margin-left:10%;
-    margin-top:70px;
+    margin-top:20px;
 }
 
 .picture{
     height:150px;
     width:150px;
     position:absolute;
-    top: 75px;
-    left:-75px;
+    top: 40px;
+    left: -100px;
 }
 
 .picture_mob{

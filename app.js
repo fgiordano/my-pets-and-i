@@ -45,6 +45,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use((req,res, next) => {
+//   if (req.user) {
+//     res.locals.user = req.user;
+//   }
+//   next();
+// })
+
 app.use(session({
   secret: 'petcarerdev',
   resave: false,
@@ -60,9 +67,6 @@ app.use( (req, res, next) => {
   }
   next();
 });
-
-
-
 
 passport.serializeUser((user, cb) => {
   cb(null, user.id);
