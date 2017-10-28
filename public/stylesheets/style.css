@@ -60,25 +60,47 @@ nav.navbar {
 }
 
 .home-heading {
-  background-color: #E3ECFA;
-  height: 75vh;
-  padding: 0 30%;
-  position: relative;
+  background-color: #ffffff;
+      height: 75vh;
+      padding: 0 30%;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+      background-image: url("https://az616578.vo.msecnd.net/files/2017/01/15/6362011418654536341441369878_e629c83d-430d-4588-8023-abc82cf0c997.jpg");
+
 }
 
 .home-heading-wrapper {
   padding: 100 50%;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 160px;
+  left: 375px;
   transform: translate(-50%, -50%);
 }
+
 .home-heading-wrapper > h1 {
   font-size: 7rem;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.home-heading-wrapper > h2 {
+  font-size: 7rem;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 30px;
 }
 
 .home-heading-wrapper > p {
   font-size: 2rem;
+  text-align: left;
+}
+
+.home-heading-wrapper > p2 {
+  font-size: 2rem;
+  text-align: left;
 }
 
 .btn-logout {
@@ -165,20 +187,34 @@ background-color: #F1F1F1;
     font-size: 20px;
     border: 4px solid rgba(255, 255, 255, 0.8);
 }
+index {
+ background-image: url("https://az616578.vo.msecnd.net/files/2017/01/15/6362011418654536341441369878_e629c83d-430d-4588-8023-abc82cf0c997.jpg") ;
+ background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+ height: 117vh;
+ padding: 0 6%;
+ position: relative;
+}
 
-.header{
+/*.header{
     color : #808080;
     margin-left:10%;
     margin-top:20px;
-}
+}*/
 
-.picture{
+/*.picture{
     height:150px;
-    width:150px;
     position:absolute;
     top: 40px;
     left: -100px;
+}*/
+
+.picture {
+  margin-top: 15px;
+  max-height: 150px;
 }
+
 
 .picture_mob{
     position: absolute;

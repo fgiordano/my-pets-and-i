@@ -23,7 +23,8 @@ router.post('/', ensureLoggedIn('/login'), (req, res, next) => {
   weight: req.body.weight,
   age: req.body.age,
   aboutme: req.body.aboutme,
-  owner: req.user._id
+  owner: req.user._id,
+  image: req.body.image
 
   });
 
@@ -31,7 +32,7 @@ router.post('/', ensureLoggedIn('/login'), (req, res, next) => {
     if (err) {
       res.render('pets/new-pets', { Pet: newPet, types: TYPES });
     } else {
-      res.redirect(`/users/${req.user._id}/show-petcarer`);
+      res.redirect(`/users/profile`);
     }
   });
 });
@@ -52,6 +53,7 @@ router.post('/:id/edit-pets', ensureLoggedIn('/login'), authorizePet, (req, res,
     weight: req.body.weight,
     age: req.body.age,
     aboutme: req.body.aboutme,
+    image: req.body.image
   };
 
   Pet.findByIdAndUpdate(req.params.id, updates, (err, Pet) => {
@@ -64,7 +66,7 @@ router.post('/:id/edit-pets', ensureLoggedIn('/login'), authorizePet, (req, res,
     if (!Pet) {
       return next(new Error('404'));
     }
-    return res.redirect(`/users/${req.user._id}/show-petcarer`);
+    return res.redirect(`/users/profile`);
   });
 });
 
@@ -73,7 +75,7 @@ router.post('/:id/delete', (req, res, next) => {
 
   Pet.findByIdAndRemove(id, (err, Pet) => {
     if (err){ return next(err); }
-    return res.redirect(`/users/${req.user._id}/show-petcarer`);
+    return res.redirect(`/users/profile`);
   });
 
 });

@@ -12,8 +12,8 @@ const { ensureLoggedIn }  = require('connect-ensure-login');
 //   res.send('respond with a resource');
 // });
 
-router.get('/:id/edit-user', ensureLoggedIn('/login'), (req, res, next) => {
-  User.findById(req.params.id, (err, User) => {
+router.get('/edit-user', ensureLoggedIn('/login'), (req, res, next) => {
+  User.findById(req.user._id, (err, User) => {
     if (err){ return next(err); }
     if (!User) { return next(new Error("404")) }
       return res.render('users/edit-user', { User, role: ROLES })
@@ -25,7 +25,8 @@ router.post('/:id', ensureLoggedIn('/login'), (req, res, next) => {
     username: req.body.username,
     email: req.body.email,
     aboutme: req.body.aboutme,
-    role: req.body.role
+    role: req.body.role,
+    image: req.body.image
   };
 
   User.findByIdAndUpdate(req.params.id, updates, (err, User) => {
@@ -38,11 +39,11 @@ router.post('/:id', ensureLoggedIn('/login'), (req, res, next) => {
     if (!User) {
       return next(new Error('404'));
     }
-    return res.redirect(`/users/${User._id}/show-petcarer`);
+    return res.redirect(`/users/profile`);
   });
 });
 
-router.get('/:id/show-petcarer', (req, res, next) => {
+router.get('/profile', (req, res, next) => {
    let User = req.user;
    Pet.find({'owner':req.user._id}, (err, pets) => {
      if (err){ return next(err); }

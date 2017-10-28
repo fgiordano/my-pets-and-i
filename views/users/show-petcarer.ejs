@@ -2,51 +2,86 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
-	<div class="row panel">
-		<div class="col-md-4 bg_blur ">
-    	    <!-- <a href="#" class="follow_btn hidden-xs">Contact Me</a> -->
-		</div>
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!-- <div class="col-md-4 bg_blur ">
+		    	    <a href="#" class="follow_btn hidden-xs">Contact Me</a>
+				</div> -->
+				<div class="col-md-3">
+
+				</div>
         <div class="col-md-3  col-xs-12">
            <img src="<%= User.image %>" class="img-thumbnail picture hidden-xs" />
-</div>
+				</div>
 
-           <div class="col-md-5 header">
+        <div class="col-md-6 header">
               <h1><%= User.username %></h1>
               <h4><%= User.role %></h4>
 							<h4><%= User.email %></h4>
-                <p class="campaign-description"><%= User.aboutme %></p>
+              <p class="campaign-description"><%= User.aboutme %></p>
 
-           </div>
-					 <div class="col-md-3" </div>
-<h1>Meet My Pets!</h1>
-    </div>
+        </div>
 
-	<div class="row nav">
+				 <div class="row">
+					 <div class="col-md-3">
+					 </div>
+
+				 <div class="col-md-9">
+					 <h1>Meet My Pets!</h1>
+				 </div>
+			 </div> <!-- end row -->
+
+			</div> <!-- panel body -->
+		</div> <!-- end panel -->
+	</div> <!-- end row -->
+
+	<!-- <div class="row nav">
         <div class="col-md-4"></div>
         <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
-            <!-- <div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
+            <div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
             <div class="col-md-4 col-xs-4 well"><i class="fa fa-heart-o fa-lg"></i> 14</div>
-            <div class="col-md-4 col-xs-4 well"><i class="fa fa-thumbs-o-up fa-lg"></i> 26</div> -->
+            <div class="col-md-4 col-xs-4 well"><i class="fa fa-thumbs-o-up fa-lg"></i> 26</div>
         </div>
-    </div>
-</div>
+  </div> -->
+</div> <!-- end container -->
 
 <div class="container pet-container">
 
   <div class="row">
 
 			<% pets.forEach((pet) => { %>
-			<div class="col-sm-6 panel">
-      <h1><%= pet.name %></h1>
-			<h4><%= pet.type %></h4>
-			<h4><%= pet.age %> Years Old</h4>
-			<h4><%= pet.weight %> lbs.</h4>
-			<h4>About <%= pet.name %></h4>
-			<p class="pet-description"><%= pet.aboutme %></p>
-			<h2><a href="/pets/<%= pet._id %>/edit-pets"><button>Edit this Pet</button></a><form action="/pets/<%= pet._id %>/delete" method="POST">
-        <button type="submit">Delete this Pet</button>
-      </form></h2>
-			</div>
+			<div class="col-sm-6">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+								<h1><%= pet.name %></h1>
+								<h4><%= pet.type %></h4>
+								<h4><%= pet.age %> Years Old</h4>
+								<h4><%= pet.weight %> lbs.</h4>
+								<h4><%= pet.breed %></h4>
+								<h4>About <%= pet.name %></h4>
+								<p class="pet-description"><%= pet.aboutme %></p>
+							</div>
+
+							<div class="col-sm-6">
+								<img src="<%= pet.image %>" class="img-thumbnail picture hidden-xs" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<a class="btn btn-success" href="/pets/<%= pet._id %>/edit-pets">Edit this Pet</a>
+							</div>
+							<div class="col-md-3">
+								<form action="/pets/<%= pet._id %>/delete" method="POST">
+									<button class="btn btn-danger" type="submit">Delete this Pet</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div> <!-- end column -->
 			<%}) %>
       <!-- <h2 class="campaign-category"><%//= Pet.type %></h2>
       <p class="campaign-description"><%//= Pet.aboutme %></p> -->

@@ -94,13 +94,13 @@ passport.use('local-signup', new LocalStrategy(
                 return next(null, false);
             } else {
                 // Destructure the body
-                const { username, email, aboutme, password, role, address } = req.body;
+                const { username, email, aboutme, password, role, image } = req.body;
                 const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
                 const newUser = new User({
                   username,
                   email,
                   aboutme,
-                  address,
+                  image,
                   role,
                   password: hashPass
                 });

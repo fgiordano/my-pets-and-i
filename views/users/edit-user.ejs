@@ -19,7 +19,7 @@
           <label for="email">Email</label>
           <input type="text" name="email" class="form-control" value="<%= User.email %>">
         </div>
-      
+
         <div class="form-group">
           <label for="aboutme">About Me</label>
           <textarea
@@ -47,6 +47,10 @@
               <% } %>
             <%  }) %>
           </select>
+        </div>
+        <div class="form-group">
+          <label for="image">Paste URL</label>
+          <input id="image" name="image" class="form-control" value="<%= User.image %>">
         </div>
 
         <div class="form-group">
